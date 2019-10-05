@@ -19,7 +19,7 @@
 │   │   ├── base.less
 │   │   ├── vars.less       
 │   │   └── mixin.less        
-│   └── utils                # 入口文件       
+│   └── utils                   # 工具类       
 ├── package.json 
 ├── README.md 
 
