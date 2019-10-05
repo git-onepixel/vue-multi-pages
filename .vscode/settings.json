@@ -1,0 +1,30 @@
+{
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  // prettier 仅针对 html/css/less/json 生效
+  "[html]": {
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.formatOnSave": true
+  },
+  "[less]": {
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  // eslint 仅针对 js/vue 生效
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    {
+      "language": "javascript",
+      "autoFix": true
+    },
+    {
+      "language": "vue",
+      "autoFix": true
+    }
+  ],
+  "prettier.singleQuote": true
+}

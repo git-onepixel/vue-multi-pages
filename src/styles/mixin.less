@@ -1,0 +1,16 @@
+@import './vars.less';
+
+.ellipsis() {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+}
+
+.ellipsis-lines(@lines: 2) {
+  -webkit-line-clamp: @lines;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
