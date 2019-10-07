@@ -3,7 +3,6 @@
         <Header />
         this is home view
         <div class="go" @click="goAbout">跳转</div>
-        <Footer />
     </div>
 </template>
 <script>

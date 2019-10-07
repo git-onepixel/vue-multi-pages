@@ -29,7 +29,7 @@
     "babel-runtime": "^6.23.0",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^0.28.0",
-    "eslint-config-vue-recommend": "^1.0.0",
+    "eslint-config-vue-recommend": "^1.0.3",
     "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-loader": "^3.0.2",
     "extract-text-webpack-plugin": "^2.0.0",
@@ -48,7 +48,6 @@
     "vue-template-compiler": "^2.6.8",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0",
-    "webpack-hot-middleware": "^2.18.0",
     "webpack-merge": "^4.1.0"
   },
   "engines": {
