@@ -1,0 +1,19 @@
+{
+  "short_name": "一像素",
+  "name": "一像素官方网站",
+  "icons": [
+    {
+      "src": "path-to-images/icon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "path-to-images/icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ],
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ffffff"
+}

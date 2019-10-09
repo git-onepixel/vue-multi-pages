@@ -3,11 +3,8 @@
  */
 
 const path = require('path');
-const pages = require('./pages.json');
 
 module.exports = {
-
-  entryChunks: pages.length,
 
   dev: {
     host: '0.0.0.0',

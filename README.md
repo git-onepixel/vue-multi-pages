@@ -4,7 +4,6 @@
 
 ``` bash
 ├── build                       # 构建配置
-├── config                      # 配置
 ├── dist                        # 发布  
 ├── public
 │   └── favicon.ico             # Favicon

@@ -4,7 +4,8 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const config = require('../config');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const pages = require('./pages.conf');
 const helper = require('./helper');
 
 module.exports = {
@@ -29,7 +30,7 @@ module.exports = {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: 'pre',
-        include: [path.join(__dirname, '../src')],
+        exclude: /node_modules/,
       },
     ],
   },
@@ -37,7 +38,7 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common',
-      minChunks: config.entryChunks,
+      minChunks: pages.length,
     }),
 
     new webpack.optimize.CommonsChunkPlugin({
@@ -57,6 +58,12 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
       chunks: Infinity,
+    }),
+
+    new CopyWebpackPlugin([{
+      from: 'public',
+    }], {
+      ignore: ['*.html'],
     }),
   ],
 };

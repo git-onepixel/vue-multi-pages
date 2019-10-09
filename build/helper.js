@@ -1,6 +1,6 @@
 const path = require('path');
-const config = require('../config');
-const pages = require('../config/pages.json');
+const config = require('./config');
+const pages = require('./pages.conf');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -81,25 +81,21 @@ module.exports = {
   createHtmlWebpackPlugins(isProd) {
     const plugins = [];
     pages.forEach((page) => {
-      const {
-        title, name, keywords, desc,
-      } = page;
+      const { name } = page;
       plugins.push(
         new HtmlWebpackPlugin({
-          title,
-          template: path.join(__dirname, '../config/template.html'),
+          ...page,
+          template: path.join(__dirname, '../public/index.html'),
           filename: `${name}.html`,
           inject: true,
           chunks: ['common', 'vendor', 'manifest', name],
           chunksSortMode: 'dependency',
-          minify: isProd ? {
-            minifyJS: true,
-            minifyCSS: true,
-            removeComments: true,
-            collapseWhitespace: true,
-          } : false,
-          keywords,
-          desc,
+          minify: {
+            minifyJS: isProd,
+            minifyCSS: isProd,
+            removeComments: isProd,
+            collapseWhitespace: isProd,
+          },
         }),
       );
     });

@@ -2,14 +2,12 @@
  * @file build configuration
  */
 
-const path = require('path');
 const webpack = require('webpack');
-const config = require('../config');
 const merge = require('webpack-merge');
-const baseWebpackConfig = require('./webpack.base.conf');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const baseWebpackConfig = require('./webpack.base.conf');
+const config = require('./config');
 const helper = require('./helper');
 
 const assetsPath = (filename) => `${config.build.assetsSubDirectory}/${filename}`;
@@ -60,13 +58,6 @@ module.exports = merge(baseWebpackConfig, {
       },
     }),
 
-    new CopyWebpackPlugin([
-      {
-        from: path.join(__dirname, '../public'),
-        to: path.join(__dirname, '../dist'),
-      },
-    ]),
-  ].concat(
-    helper.createHtmlWebpackPlugins(true),
-  ),
+    ...helper.createHtmlWebpackPlugins(true),
+  ],
 });

@@ -20,7 +20,8 @@ export default {
 </script>
 <style lang="less" scoped>
     .me-about-view {
-        color: green;
+        color: red;
+        font-size: 16px;
         text-align: center;
         line-height: 40px;
     }
