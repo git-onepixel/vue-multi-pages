@@ -1,46 +1,83 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
   <head>
+    <!-- 声明文档字符编码 -->
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- SEO配置 -->
+    <!-- IE 浏览器兼容性设置 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!-- SEO 优化 -->
     <meta name="description" content="<%= htmlWebpackPlugin.options.desc %>" />
     <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>" />
     <meta name="author" content="name, email@gmail.com" />
+
+    <!-- 定义网页搜索引擎索引方式 -->
     <meta name="robots" content="index,follow" />
-
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-
     <!-- 不允许搜索引擎对网页转码 -->
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <!-- 页面同时适合在移动设备和PC上进行浏览 -->
-    <meta name="applicable-device" content="pc,mobile" />
-    <!-- 开启DNS预获取 -->
+    <!-- DNS 预获取 -->
     <meta http-equiv="x-dns-prefetch-control" content="on" />
-    <!-- 对特定网址进行DNS预获取 -->
-    <link rel="dns-prefetch" target="_blank" href="https://duqianduan.com" />
-    <!-- 禁止以下格式检测 -->
-    <meta name="format-detection" content="telephone=no,email=no,adress=no" />
+    <link rel="dns-prefetch" href="http://somesite.com" />
 
-    <!-- 开启全屏显示 -->
+    <!-- 移动设备添加 viewport -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <!-- 设置网站默认图标 -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- IOS App 图标 -->
+    <link rel="apple-touch-icon-precomposed" href="/favicon.ico" />
+    <!-- IOS App 启动画面 -->
+    <link rel="apple-touch-startup-image" href="/startup.png" />
+    <!-- 基于 Chrome 的 PWA 配置 -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- IOS 添加到主屏后的标题 -->
+    <meta name="apple-mobile-web-app-title" content="标题" />
+    <!-- IOS 设置状态栏的背景颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- Windows 8 磁贴颜色 -->
+    <meta name="msapplication-TileColor" content="#000" />
+    <!-- Windows 8 磁贴图标 -->
+    <meta name="msapplication-TileImage" content="/favicon.ico" />
+
+    <!-- IOS 全屏模式 -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <!-- QQ强制竖屏 -->
-    <meta name="x5-orientation" content="portrait" />
-    <!-- UC强制全屏 -->
+    <!-- Chrome 高版本全屏 -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- UC 强制全屏 -->
     <meta name="full-screen" content="yes" />
-    <!-- QQ强制全屏 -->
+    <!-- QQ 强制全屏 -->
     <meta name="x5-fullscreen" content="true" />
-    <!-- UC应用模式 -->
+    <!-- QQ 强制竖屏 -->
+    <meta name="x5-orientation" content="portrait" />
+    <!-- UC 应用模式 -->
     <meta name="browsermode" content="application" />
-    <!-- QQ应用模式 -->
+    <!-- QQ 应用模式 -->
     <meta name="x5-page-mode" content="app" />
 
-    <!-- PWA配置文件 -->
-    <link rel="manifest" href="manifest.json" />
+    <!-- 禁止格式检测 -->
+    <meta name="format-detection" content="telephone=no,email=no,adress=no" />
+    <!-- Windows Phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- 让360双核浏览器用 webkit 内核渲染页面 -->
+    <meta name="renderer" content="webkit" />
+    <!-- 页面同时适合在移动设备和PC上进行浏览 -->
+    <meta name="applicable-device" content="pc,mobile" />
+    <!-- 针对手持设备优化，主要是针对一些老的不识别 viewport 的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true" />
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320" />
+
+    <!-- SNS 社交标签 参考微博API -->
+    <meta property="og:type" content="类型" />
+    <meta property="og:url" content="URL地址" />
+    <meta property="og:title" content="标题" />
+    <meta property="og:image" content="图片" />
+    <meta property="og:description" content="描述" />
+
     <!-- 页面标题 -->
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
